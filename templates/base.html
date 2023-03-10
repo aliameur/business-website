@@ -15,7 +15,7 @@
             <link href="{{ url_for('static', filename='css/nucleo-icons.css')}}" rel="stylesheet" />
             <link href="{{ url_for('static', filename='css/nucleo-svg.css')}}" rel="stylesheet" />
             <!-- Font Awesome Icons -->
-            <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+            <script src="https://kit.fontawesome.com/9afceccd18.js" crossorigin="anonymous"></script>
             <!-- Material Icons -->
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
             <!-- CSS Files -->
@@ -29,17 +29,12 @@
     <body>
         <!-- Your page content -->
         {% block content %}{% endblock %}
-
-        {% block scripts %}
-            <!-- Optional JavaScript -->
-            {{ bootstrap.load_js() }}
-        <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js" type="text/javascript"></script>
-        {% endblock %}
-      <footer class="footer py-5">
+        {% block footer %}
+        <footer class="footer py-5">
     <div class="container z-index-1 position-relative">
       <div class="row">
         <div class="col-lg-4 me-auto mb-lg-0 mb-4 text-lg-start text-center">
-          <h6 class="text-dark font-weight-bolder text-uppercase mb-lg-4 mb-3">Material Design</h6>
+          <h6 class="text-dark font-weight-bolder text-uppercase mb-lg-4 mb-3">Interna</h6>
           <ul class="nav flex-row ms-n3 justify-content-lg-start justify-content-center mb-4 mt-sm-0">
             <li class="nav-item">
               <a class="nav-link text-dark opacity-8" href="https://www.creative-tim.com" target="_blank">
@@ -65,28 +60,33 @@
           <p class="text-sm text-dark opacity-8 mb-0">
             Copyright © <script>
               document.write(new Date().getFullYear())
-            </script> Material Design by Creative Tim.
+            </script> Interna.
           </p>
         </div>
         <div class="col-lg-6 ms-auto text-lg-end text-center">
           <p class="mb-5 text-lg text-dark font-weight-bold">
-            The reward for getting on the stage is fame. The price of fame is you can’t get off the stage.
+            Bridging the gap between Retail and Technology.
           </p>
-          <a href="javascript:;" target="_blank" class="text-dark me-xl-4 me-4 opacity-5">
-            <span class="fab fa-dribbble"></span>
-          </a>
-          <a href="javascript:;" target="_blank" class="text-dark me-xl-4 me-4 opacity-5">
-            <span class="fab fa-twitter"></span>
-          </a>
-          <a href="javascript:;" target="_blank" class="text-dark me-xl-4 me-4 opacity-5">
-            <span class="fab fa-pinterest"></span>
-          </a>
-          <a href="javascript:;" target="_blank" class="text-dark opacity-5">
-            <span class="fab fa-github"></span>
-          </a>
+              <a class="text-dark opacity-5 me-xl-4 me-4 opacity-5" href="">
+                  <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a class="text-dark opacity-5 me-xl-4 me-4 opacity-5" href="">
+                  <i class="fa-brands fa-twitter"></i>
+              </a>
+                <a class="text-dark opacity-5" href="">
+                  <i class="fa-regular fa-envelope"></i>
+                </a>
+
         </div>
       </div>
     </div>
   </footer>
+        {% endblock %}
+        {% block scripts %}
+            <!-- Optional JavaScript -->
+            {{ bootstrap.load_js() }}
+            <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js" type="text/javascript"></script>
+        {% endblock %}
+
     </body>
 </html>
