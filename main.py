@@ -24,7 +24,6 @@ def home():
                                 msg="Subject: New Message From Business Website\n\n"
                                     f"Name: {data['name']}\n"
                                     f"Email: {data['email']}\n"
-                                    f"Subject: {data['subject']}\n"
                                     f"Message: {data['message']}\n")
     return render_template("home.html")
 
