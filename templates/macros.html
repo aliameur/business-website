@@ -5,7 +5,7 @@
                 <div class="col-md-12 pe-2 mb-3">
                     <div class="input-group input-group-static mb-4">
                         {{ field.label() }}
-                        {{ field(class="form-control", placeholder=field.label.text) }}
+                        {{ field(class="form-control") }}
                     </div>
                     {% if form.message.errors %}
                         <div class="alert alert-danger">

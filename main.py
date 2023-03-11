@@ -4,11 +4,9 @@ import smtplib
 import os
 from dotenv import load_dotenv
 from flask_talisman import Talisman
-from flask_wtf import FlaskForm
 from flask_wtf.csrf import CSRFProtect
-from wtforms import StringField, TextAreaField
-from wtforms.validators import DataRequired, Email
 import uuid
+from forms import ContactForm
 
 load_dotenv()
 app = Flask(__name__)
@@ -35,12 +33,6 @@ csp = {
 talisman = Talisman(app, content_security_policy=csp)
 
 
-class ContactForm(FlaskForm):
-    name = StringField('My name is', [DataRequired()], render_kw={'placeholder': 'Full Name'})
-    email = StringField('Full Name', [Email()], render_kw={'placeholder': 'name@example.com'})
-    message = TextAreaField('Your message', [DataRequired()], render_kw={'placeholder': 'I want to say that...'})
-
-
 def email_admin(name, email, message):
     with smtplib.SMTP("smtp.gmail.com", 587, timeout=120) as connection:
         connection.starttls()
@@ -59,8 +51,6 @@ def email_admin(name, email, message):
 @app.route('/', methods=["POST", "GET"])
 def home():
     form = ContactForm()
-    for i in form:
-        print(i)
     if form.validate_on_submit():
         email_admin(name=form.name, email=form.email, message=form.message)
     if request.method == "POST":
