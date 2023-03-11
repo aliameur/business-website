@@ -9,3 +9,7 @@ body {
 .logo-hero {
     width: 25rem;
 }
+
+.hero {
+    background-image: url('/static/img/hero-bg.jpg')
+}
