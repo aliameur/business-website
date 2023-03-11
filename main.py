@@ -8,7 +8,23 @@ from flask_talisman import Talisman
 load_dotenv()
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
-talisman = Talisman(app)
+
+csp = {
+    'default-src': [
+        '\'self\'',
+        '\'unsafe-inline\'',
+        'stackpath.bootstrapcdn.com',
+        'code.jquery.com',
+        'cdn.jsdelivr.net',
+        'unpkg.com/popper.js/',
+        'fonts.googleapis.com',
+        'fonts.gstatic.com',
+        'kit.fontawesome.com',
+        'ka-f.fontawesome.com'
+    ]
+}
+
+talisman = Talisman(app, content_security_policy=csp)
 
 
 @app.route('/', methods=["POST", "GET"])

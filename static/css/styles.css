@@ -11,5 +11,9 @@ body {
 }
 
 .hero {
-    background-image: url('/static/img/hero-bg.jpg')
+    background-image: url('../img/hero-bg.jpg');
+}
+
+.contact-bg {
+    background-image: url('../img/contact-bg.jpg');
 }
