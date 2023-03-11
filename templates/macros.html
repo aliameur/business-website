@@ -1,7 +1,5 @@
 {% macro contact_form(form) %}
     <form method="POST" action="">
-        {{  form.csrf_token() }}
-        {{ form.hidden_tag() }}
         <div class="row form-group">
             {% for field in form if not field.type == 'CSRFTokenField' %}
                 <div class="col-md-12 pe-2 mb-3">
