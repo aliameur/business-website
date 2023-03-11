@@ -3,10 +3,12 @@ from flask_bootstrap import Bootstrap5
 import smtplib
 import os
 from dotenv import load_dotenv
+from flask_talisman import Talisman
 
 load_dotenv()
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
+talisman = Talisman(app)
 
 
 @app.route('/', methods=["POST", "GET"])
