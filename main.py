@@ -3,10 +3,12 @@ from flask_bootstrap import Bootstrap5
 import smtplib
 import os
 from dotenv import load_dotenv
+from flask_talisman import Talisman
 
 load_dotenv()
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
+talisman = Talisman(app)
 
 
 @app.route('/', methods=["POST", "GET"])
@@ -26,14 +28,6 @@ def home():
                                     f"Email: {data['email']}\n"
                                     f"Message: {data['message']}\n")
     return render_template("home.html")
-
-
-@app.before_request
-def before_request():
-    if not request.is_secure:
-        url = request.url.replace('http://', 'https://', 1)
-        code = 301
-        return redirect(url, code=code)
 
 
 if __name__ == '__main__':
