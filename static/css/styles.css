@@ -1,3 +1,11 @@
 body {
     background-color: #FFFFFA;
 }
+
+.logo {
+    width: 10rem;
+
+}
+.logo-hero {
+    width: 25rem;
+}

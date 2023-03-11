@@ -4,12 +4,13 @@
 {% endblock %}
 {% block content %}
 <header class="header-2">
-  <div class="page-header min-vh-75 relative" style="background-image: url('./assets/img/bg2.jpg')">
+  <div class="page-header min-vh-75 relative" style="background-image: url('static/img/hero-bg.jpg')">
     <span class="mask bg-gradient-primary opacity-4"></span>
     <div class="container">
       <div class="row">
         <div class="col-lg-7 text-center mx-auto">
-          <h1 class="text-white pt-3 mt-n5">Interna Solutions</h1>
+<!--          <h1 class="text-white pt-3 mt-n5">Interna Solutions</h1>-->
+          <img class="logo-hero py-1" src="{{ url_for('static', filename='img/logo.png') }}" alt="">
           <p class="lead text-white mt-3">Bridging the gap between Retail and Technology. <br/> Become a part of our growing number of satisfied clients. </p>
         </div>
       </div>
@@ -193,7 +194,7 @@
                     </div>
                     <div class="row">
                       <div class="col-md-6 text-end ms-auto">
-                        <button type="submit" class="btn bg-gradient-info mb-0">Send Message</button>
+                        <button type="submit" class="btn bg-gradient-primary mb-0">Send Message</button>
                       </div>
                     </div>
                   </div>
