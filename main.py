@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from flask_bootstrap import Bootstrap5
 import smtplib
 import os
@@ -27,12 +27,14 @@ def home():
                                     f"Message: {data['message']}\n")
     return render_template("home.html")
 
+
 @app.before_request
 def before_request():
     if not request.is_secure:
         url = request.url.replace('http://', 'https://', 1)
         code = 301
         return redirect(url, code=code)
+
 
 if __name__ == '__main__':
     app.run()
