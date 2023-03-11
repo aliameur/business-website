@@ -36,7 +36,7 @@
                 <div class="container-fluid px-0">
                     <a class="navbar-brand font-weight-bolder ms-sm-3"
                        href="{{ url_for('home') }}" rel="tooltip">
-                        <img class="logo py-1" src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+                        <img class="logo py-1" src="{{ url_for('static', filename='img/logo.webp') }}" alt="">
                     </a>
                     <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
@@ -50,7 +50,7 @@
                     <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
                         <ul class="navbar-nav navbar-nav-hover ms-auto">
                             <li class="nav-item mx-2">
-                                <a class="nav-link ps-2 d-flex cursor-pointer align-items-center text-muted">
+                                <a class="nav-link ps-2 d-flex cursor-pointer align-items-center text-muted" href="{{ url_for('home') }}">
                                     <i class="fa-solid fa-house px-2"></i>
                                     Home
                                 </a>

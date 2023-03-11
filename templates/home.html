@@ -1,16 +1,17 @@
 {% extends "base.html" %}
+{% from 'macros.html' import contact_form %}
 {% block title %}
 <title>Home</title>
 {% endblock %}
 {% block content %}
 <header class="header-2">
   <div class="hero page-header min-vh-75 relative">
-    <span class="mask bg-gradient-primary opacity-4"></span>
+    <span class="mask bg-gradient-dark opacity-2-test"></span>
     <div class="container">
       <div class="row">
         <div class="col-lg-7 text-center mx-auto">
 <!--          <h1 class="text-white pt-3 mt-n5">Interna Solutions</h1>-->
-          <img class="logo-hero py-1" src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+          <img class="logo-hero py-1" src="{{ url_for('static', filename='img/logo.webp') }}" alt="">
           <p class="lead text-white mt-3">Bridging the gap between Retail and Technology. <br/> Become a part of our growing number of satisfied clients. </p>
         </div>
       </div>
@@ -113,8 +114,95 @@
   </div>
 </section>
 
+
+<section class="py-7">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mx-auto text-center">
+            <h2 class="mb-0">Trusted by over</h2>
+            <h2 class="text-gradient text-primary mb-3">1,679,477+ web developers</h2>
+            <p class="lead">Many Fortune 500 companies, startups, universities and governmental institutions love Creative Tim's products. </p>
+          </div>
+        </div>
+        <div class="row mt-6">
+          <div class="col-lg-4 col-md-8">
+            <div class="card card-plain">
+              <div class="card-body">
+                <div class="author">
+                  <div class="name">
+                    <h6 class="mb-0 font-weight-bolder">Nick Willever</h6>
+                    <div class="stats">
+                      <i class="far fa-clock"></i> 1 day ago
+                    </div>
+                  </div>
+                </div>
+                <p class="mt-4">"This is an excellent product, the documentation is excellent and helped me get things done more efficiently."</p>
+                <div class="rating mt-3">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-8 ms-md-auto">
+            <div class="card bg-gradient-primary">
+              <div class="card-body">
+                <div class="author align-items-center">
+                  <div class="name">
+                    <h6 class="text-white mb-0 font-weight-bolder">Shailesh Kushwaha</h6>
+                    <div class="stats text-white">
+                      <i class="far fa-clock"></i> 1 week ago
+                    </div>
+                  </div>
+                </div>
+                <p class="mt-4 text-white">"I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!"</p>
+                <div class="rating mt-3">
+                  <i class="fas fa-star text-white"></i>
+                  <i class="fas fa-star text-white"></i>
+                  <i class="fas fa-star text-white"></i>
+                  <i class="fas fa-star text-white"></i>
+                  <i class="fas fa-star text-white"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-8">
+            <div class="card card-plain">
+              <div class="card-body">
+                <div class="author">
+                  <div class="name">
+                    <h6 class="mb-0 font-weight-bolder">Samuel Kamuli</h6>
+                    <div class="stats">
+                      <i class="far fa-clock"></i> 3 weeks ago
+                    </div>
+                  </div>
+                </div>
+                <p class="mt-4">"Great product. Helped me cut the time to set up a site. I used the components within instead of starting from scratch. I highly recommend for developers who want to spend more time on the backend!."</p>
+                <div class="rating mt-3">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<!--        <hr class="horizontal dark my-5">-->
+<!--        <div class="row">-->
+<!--          <div class="col-lg-2 col-md-4 col-6 ms-auto">-->
+<!--            <img class="w-100 opacity-6" src="./assets/img/logos/gray-logos/logo-apple.svg" alt="Logo">-->
+<!--          </div>-->
+<!--        </div>-->
+      </div>
+    </section>
+
 </div>
-<section class="py-lg-5">
+<section class="py-lg-5" id="contact-form">
     <div class="container">
       <div class="row">
         <div class="col">
@@ -166,39 +254,15 @@
                 </div>
               </div>
               <div class="col-lg-7">
-                <form class="p-3" role="form" id="contact-form" method="post" autocomplete="off">
+
                   <div class="card-header px-4 py-sm-5 py-3">
                     <h2>Say Hi!</h2>
                     <p class="lead"> We'd like to talk with you.</p>
                   </div>
                   <div class="card-body pt-1">
-                    <div class="row">
-                      <div class="col-md-12 pe-2 mb-3">
-                        <div class="input-group input-group-static mb-4">
-                          <label>My name is</label>
-                          <input name="name" type="text" class="form-control" placeholder="Full Name">
-                        </div>
-                      </div>
-                      <div class="col-md-12 pe-2 mb-3">
-                        <div class="input-group input-group-static mb-4">
-                          <label>My email is</label>
-                          <input name="email" type="text" class="form-control" placeholder="name@example.com">
-                        </div>
-                      </div>
-                      <div class="col-md-12 pe-2 mb-3">
-                        <div class="input-group input-group-static mb-4">
-                          <label>Your message</label>
-                          <textarea name="message" class="form-control" id="message" rows="6" placeholder="I want to say that..."></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6 text-end ms-auto">
-                        <button type="submit" class="btn bg-gradient-primary mb-0">Send Message</button>
-                      </div>
-                    </div>
+                      {{ contact_form(form) }}
                   </div>
-                </form>
+
               </div>
             </div>
           </div>
