@@ -26,7 +26,8 @@ csp = {
         'fonts.googleapis.com',
         'fonts.gstatic.com',
         'kit.fontawesome.com',
-        'ka-f.fontawesome.com'
+        'ka-f.fontawesome.com',
+        'images.unsplash.com'
     ]
 }
 
