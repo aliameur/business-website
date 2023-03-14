@@ -5,6 +5,6 @@ from wtforms.validators import DataRequired, Email
 
 class ContactForm(FlaskForm):
     name = StringField('My name is', [DataRequired()], render_kw={'placeholder': 'Full Name'})
-    email = StringField('Full Name', [Email()], render_kw={'placeholder': 'name@example.com'})
+    email = StringField('My email', [Email()], render_kw={'placeholder': 'name@example.com'})
     message = TextAreaField('Your message', [DataRequired()],
-                            render_kw={'placeholder': 'I want to say that...','rows': 5})
+                            render_kw={'placeholder': 'I want to say that...', 'rows': 5})
