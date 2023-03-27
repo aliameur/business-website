@@ -5,14 +5,13 @@ import os
 from dotenv import load_dotenv
 from flask_talisman import Talisman
 from flask_wtf.csrf import CSRFProtect
-import uuid
 from forms import ContactForm
 from flask_sitemap import Sitemap
 
 load_dotenv()
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
-app.config['SECRET_KEY'] = uuid.uuid4().hex
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
 csrf = CSRFProtect(app)
 sitemap = Sitemap(app)
 
